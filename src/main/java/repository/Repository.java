@@ -1,7 +1,7 @@
-package repository;
+package main.java.repository;
 
-import model.Category;
-import model.Expense;
+import main.java.model.Category;
+import main.java.model.Expense;
 
 import java.util.List;
 
