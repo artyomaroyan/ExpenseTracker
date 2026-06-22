@@ -1,17 +1,17 @@
 package main.java.model;
 
-import java.time.LocalDate;
+import java.time.Instant;
 
 /**
  * Author: Artyom Aroyan
- * Date: 06.04.26
- * Time: 17:46:01
+ * Date: 21.06.26
+ * Time: 22:35:01
  */
 public record Expense(
         Long id,
-        double amount,
-        Category category,
+        String title,
         String description,
-        LocalDate date
+        Category category,
+        Instant createdAt
 ) {
 }

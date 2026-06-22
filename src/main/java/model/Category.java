@@ -2,13 +2,13 @@ package main.java.model;
 
 /**
  * Author: Artyom Aroyan
- * Date: 06.04.26
- * Time: 17:46:55
+ * Date: 21.06.26
+ * Time: 23:21:09
  */
 public enum Category {
+    SHOPPING,
     FOOD,
-    TRANSPORT,
-    ENTERTAINMENT,
-    HEALTH,
+    HOUSE_RENT,
+    CAR,
     OTHER
 }
