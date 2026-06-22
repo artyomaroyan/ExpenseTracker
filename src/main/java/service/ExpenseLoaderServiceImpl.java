@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
@@ -22,14 +21,14 @@ import java.util.List;
  * Date: 21.06.26
  * Time: 23:51:51
  */
-public class ExpenseLoaderImpl implements ExpenseLoader {
-    private static final Logger log = LoggerFactory.getLogger(ExpenseLoaderImpl.class);
+public class ExpenseLoaderServiceImpl implements ExpenseLoaderService {
+    private static final Logger log = LoggerFactory.getLogger(ExpenseLoaderServiceImpl.class);
 
     private final Type type = new TypeToken<List<Expense>>() {}.getType();
     private final File file = new File("Expense.json");
     private final Gson gson;
 
-    public ExpenseLoaderImpl() {
+    public ExpenseLoaderServiceImpl() {
         this.gson = new Gson();
     }
 

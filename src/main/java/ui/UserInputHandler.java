@@ -46,6 +46,14 @@ public class UserInputHandler implements AutoCloseable {
         return input;
     }
 
+    public double readAmount() {
+        chackedClosed();
+        println("Please enter your expense amount:");
+        var input = scanner.nextDouble();
+        inputValidator.validateAmount(input);
+        return input;
+    }
+
     public String readCategory() {
         chackedClosed();
         println("Please choose category: 'SHOPPING', 'FOOD', 'HOUSE_RENT', 'CAR', 'OTHER'");
@@ -55,7 +63,7 @@ public class UserInputHandler implements AutoCloseable {
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() {
         if (!closed) {
             scanner.close();
             closed = true;

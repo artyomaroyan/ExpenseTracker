@@ -1,7 +1,7 @@
 package main.java.validation;
 
 import main.java.model.Category;
-import main.java.service.ExpenseLoader;
+import main.java.service.ExpenseLoaderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,18 +18,20 @@ public class InputValidatorImpl implements InputValidator {
 
     private static final int TITLE_MIN_LENGTH = 3;
     private static final int TITLE_MAX_LENGTH = 20;
+    private static final double MIN_AMOUNT = 1.0;
+    private static final double MAX_AMOUNT = 999999.9;
     private static final int DESCRIPTION_MIN_LENGTH = 5;
     private static final int DESCRIPTION_MAX_LENGTH = 50;
 
-    private final ExpenseLoader expenseLoader;
+    private final ExpenseLoaderService expenseLoaderService;
 
-    public InputValidatorImpl(ExpenseLoader expenseLoader) {
-        this.expenseLoader = expenseLoader;
+    public InputValidatorImpl(ExpenseLoaderService expenseLoaderService) {
+        this.expenseLoaderService = expenseLoaderService;
     }
 
     @Override
     public void validateId(Long id) {
-        boolean exists = expenseLoader.loadAll().stream()
+        boolean exists = expenseLoaderService.loadAll().stream()
                 .anyMatch(e -> Objects.equals(e.id(), id));
         if (exists) throw new IllegalArgumentException("Duplicate ID value: " + id);
     }
@@ -53,6 +55,17 @@ public class InputValidatorImpl implements InputValidator {
         } else if (description.length() >= DESCRIPTION_MAX_LENGTH) {
             log.warn("Description length can not be greater then 50 characters.");
             throw new IllegalStateException("Description length is greater then allowed");
+        }
+    }
+
+    @Override
+    public void validateAmount(double amount) {
+        if (amount <= MIN_AMOUNT) {
+            log.warn("Amount can not be les or equal to {}", MIN_AMOUNT);
+            throw new IllegalStateException("Amount is less then allowed: Please enter valid amount.");
+        } else if (amount >= MAX_AMOUNT) {
+            log.warn("Amount can not be greater or equal to {}", MAX_AMOUNT);
+            throw new IllegalStateException("Amount is greater then allowed: Please enter valid amount.");
         }
     }
 
