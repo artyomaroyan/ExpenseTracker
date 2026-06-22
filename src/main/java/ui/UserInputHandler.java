@@ -11,13 +11,13 @@ import static java.lang.IO.println;
  * Date: 21.06.26
  * Time: 23:23:43
  */
-public class UserInput implements AutoCloseable {
+public class UserInputHandler implements AutoCloseable {
     private final Scanner scanner;
     private boolean closed = false;
 
     private final InputValidator inputValidator;
 
-    public UserInput(InputValidator inputValidator) {
+    public UserInputHandler(InputValidator inputValidator) {
         this.inputValidator = inputValidator;
         this.scanner = new Scanner(System.in);
     }
@@ -25,27 +25,33 @@ public class UserInput implements AutoCloseable {
     public Long readLong() {
         chackedClosed();
         println("Please enter expense ID:");
-        Long id = scanner.nextLong();
-        inputValidator.validateId(id);
-        return id;
+        var input = scanner.nextLong();
+        inputValidator.validateId(input);
+        return input;
     }
 
     public String readTitle() {
         chackedClosed();
         println("Please enter expense title:");
-        return scanner.next();
+        var input =  scanner.next();
+        inputValidator.validateTitle(input);
+        return input;
     }
 
     public String readDescription() {
         chackedClosed();
-        println("Please enter expense title:");
-        return scanner.next();
+        println("Please enter expense description:");
+        var input = scanner.next();
+        inputValidator.validateDescription(input);
+        return input;
     }
 
     public String readCategory() {
         chackedClosed();
         println("Please choose category: 'SHOPPING', 'FOOD', 'HOUSE_RENT', 'CAR', 'OTHER'");
-        return scanner.next();
+        var input = scanner.next();
+        inputValidator.validateCategory(input);
+        return input.toUpperCase();
     }
 
     @Override
