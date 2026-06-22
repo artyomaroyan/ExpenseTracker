@@ -2,7 +2,7 @@ package main.java;
 
 import main.java.service.ExpenseLoader;
 import main.java.service.ExpenseLoaderImpl;
-import main.java.ui.UserInput;
+import main.java.ui.UserInputHandler;
 import main.java.validation.InputValidator;
 import main.java.validation.InputValidatorImpl;
 
@@ -18,8 +18,11 @@ public class Application {
         ExpenseLoader expenseLoader = new ExpenseLoaderImpl();
         InputValidator inputValidator = new InputValidatorImpl(expenseLoader);
 
-        try (UserInput input = new UserInput(inputValidator)) {
+        try (UserInputHandler input = new UserInputHandler(inputValidator)) {
             println(input.readLong());
+            println(input.readTitle());
+            println(input.readDescription());
+            println(input.readCategory());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

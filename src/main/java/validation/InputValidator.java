@@ -7,4 +7,7 @@ package main.java.validation;
  */
 public interface InputValidator {
     void validateId(Long id);
+    void validateTitle(String title);
+    void validateDescription(String description);
+    void validateCategory(String category);
 }
