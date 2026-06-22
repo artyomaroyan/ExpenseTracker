@@ -9,5 +9,6 @@ public interface InputValidator {
     void validateId(Long id);
     void validateTitle(String title);
     void validateDescription(String description);
+    void validateAmount(double amount);
     void validateCategory(String category);
 }

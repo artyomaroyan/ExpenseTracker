@@ -1,12 +1,16 @@
 package main.java;
 
-import main.java.service.ExpenseLoader;
-import main.java.service.ExpenseLoaderImpl;
-import main.java.ui.UserInputHandler;
+import main.java.model.Category;
+import main.java.model.Expense;
+import main.java.persistence.*;
+import main.java.service.ExpenseCreateService;
+import main.java.service.ExpenseCreateServiceImpl;
+import main.java.service.ExpenseLoaderService;
+import main.java.service.ExpenseLoaderServiceImpl;
 import main.java.validation.InputValidator;
 import main.java.validation.InputValidatorImpl;
 
-import static java.lang.IO.println;
+import java.time.Instant;
 
 /**
  * Author: Artyom Aroyan
@@ -15,16 +19,40 @@ import static java.lang.IO.println;
  */
 public class Application {
     static void main() {
-        ExpenseLoader expenseLoader = new ExpenseLoaderImpl();
-        InputValidator inputValidator = new InputValidatorImpl(expenseLoader);
+        ExpenseCreateService expenseCreateService = getExpenseCreateService();
 
-        try (UserInputHandler input = new UserInputHandler(inputValidator)) {
-            println(input.readLong());
-            println(input.readTitle());
-            println(input.readDescription());
-            println(input.readCategory());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        expenseCreateService.create(
+                new Expense(
+                        null,
+                        "title1",
+                        "description1",
+                        12.2,
+                        Category.valueOf("FOOD"),
+                        Instant.now()
+                ));
+    }
+
+    private static ExpenseCreateService getExpenseCreateService() {
+        ExpenseLoaderService expenseLoaderService = new ExpenseLoaderServiceImpl();
+        InputValidator inputValidator = new InputValidatorImpl(expenseLoaderService);
+        ModelInformation<Expense, Long> modelInformation = new DelegatingModelInformation<>(new ModelInformationImpl());
+        ModelOperation modelOperation = new ModelTemplate();
+        ExpenseRepository<Expense, Long> repository = new ExpenseRepositoryAdapter(modelInformation, modelOperation);
+        return new ExpenseCreateServiceImpl(repository);
     }
 }
+
+
+//        try (UserInputHandler input = new UserInputHandler(inputValidator)) {
+//            expenseCreateService.create(
+//                    new Expense(
+//                            1L,
+//                            "title1",
+//                            "description1",
+//                            12.2,
+//                            Category.valueOf("FOOD"),
+//                            Instant.now()
+//                    ));
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
