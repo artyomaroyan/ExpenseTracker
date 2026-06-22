@@ -9,6 +9,6 @@ import java.util.List;
  * Date: 21.06.26
  * Time: 23:51:01
  */
-public interface ExpenseLoader {
+public interface ExpenseLoaderService {
     List<Expense> loadAll();
 }

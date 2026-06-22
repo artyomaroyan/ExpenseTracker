@@ -11,6 +11,7 @@ public record Expense(
         Long id,
         String title,
         String description,
+        double amount,
         Category category,
         Instant createdAt
 ) {
