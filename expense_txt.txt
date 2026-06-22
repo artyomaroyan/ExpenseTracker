@@ -1,0 +1,3 @@
+Expense[id=1, title=title1, amount=123.2]
+Expense[id=2, title=title2, amount=123123.32]
+Expense[id=3, title=title3, amount=42.12]
