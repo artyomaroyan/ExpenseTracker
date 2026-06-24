@@ -1,16 +1,10 @@
 package main.java;
 
-import main.java.model.Category;
-import main.java.model.Expense;
-import main.java.persistence.*;
-import main.java.service.ExpenseCreateService;
-import main.java.service.ExpenseCreateServiceImpl;
-import main.java.service.ExpenseLoaderService;
-import main.java.service.ExpenseLoaderServiceImpl;
-import main.java.validation.InputValidator;
-import main.java.validation.InputValidatorImpl;
-
-import java.time.Instant;
+import main.java.configuration.ApplicationConfiguration;
+import main.java.context.ApplicationContext;
+import main.java.ui.ConsoleUI;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Author: Artyom Aroyan
@@ -18,41 +12,16 @@ import java.time.Instant;
  * Time: 22:34:38
  */
 public class Application {
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
     static void main() {
-        ExpenseCreateService expenseCreateService = getExpenseCreateService();
-
-        expenseCreateService.create(
-                new Expense(
-                        null,
-                        "title1",
-                        "description1",
-                        12.2,
-                        Category.valueOf("FOOD"),
-                        Instant.now()
-                ));
-    }
-
-    private static ExpenseCreateService getExpenseCreateService() {
-        ExpenseLoaderService expenseLoaderService = new ExpenseLoaderServiceImpl();
-        InputValidator inputValidator = new InputValidatorImpl(expenseLoaderService);
-        ModelInformation<Expense, Long> modelInformation = new DelegatingModelInformation<>(new ModelInformationImpl());
-        ModelOperation modelOperation = new ModelTemplate();
-        ExpenseRepository<Expense, Long> repository = new ExpenseRepositoryAdapter(modelInformation, modelOperation);
-        return new ExpenseCreateServiceImpl(repository);
+        try {
+            ApplicationConfiguration configuration = ApplicationConfiguration.load();
+            ApplicationContext context = ApplicationContext.initialize(configuration);
+            ConsoleUI consoleUI = context.consoleUI();
+            consoleUI.start();
+        } catch (Exception ex) {
+            log.error("Failed to start application", ex);
+            throw new RuntimeException("Application failed to start: " + ex.getMessage());
+        }
     }
 }
-
-
-//        try (UserInputHandler input = new UserInputHandler(inputValidator)) {
-//            expenseCreateService.create(
-//                    new Expense(
-//                            1L,
-//                            "title1",
-//                            "description1",
-//                            12.2,
-//                            Category.valueOf("FOOD"),
-//                            Instant.now()
-//                    ));
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
