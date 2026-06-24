@@ -22,6 +22,11 @@ public class UserInputHandler implements AutoCloseable {
         this.scanner = new Scanner(System.in);
     }
 
+    public String readLine() {
+        chackedClosed();
+        return scanner.nextLine();
+    }
+
     public Long readLong() {
         chackedClosed();
         println("Please enter expense ID:");
@@ -33,7 +38,7 @@ public class UserInputHandler implements AutoCloseable {
     public String readTitle() {
         chackedClosed();
         println("Please enter expense title:");
-        var input =  scanner.next();
+        var input =  scanner.nextLine();
         inputValidator.validateTitle(input);
         return input;
     }
@@ -41,7 +46,7 @@ public class UserInputHandler implements AutoCloseable {
     public String readDescription() {
         chackedClosed();
         println("Please enter expense description:");
-        var input = scanner.next();
+        var input = scanner.nextLine();
         inputValidator.validateDescription(input);
         return input;
     }
@@ -57,7 +62,7 @@ public class UserInputHandler implements AutoCloseable {
     public String readCategory() {
         chackedClosed();
         println("Please choose category: 'SHOPPING', 'FOOD', 'HOUSE_RENT', 'CAR', 'OTHER'");
-        var input = scanner.next();
+        var input = scanner.nextLine();
         inputValidator.validateCategory(input);
         return input.toUpperCase();
     }
