@@ -62,7 +62,7 @@ public class UserInputHandler implements AutoCloseable {
     public String readCategory() {
         chackedClosed();
         println("Please choose category: 'SHOPPING', 'FOOD', 'HOUSE_RENT', 'CAR', 'OTHER'");
-        var input = scanner.next();
+        var input = scanner.nextLine();
         inputValidator.validateCategory(input);
         return input.toUpperCase();
     }
