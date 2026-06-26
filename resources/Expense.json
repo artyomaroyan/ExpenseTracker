@@ -1,12 +1,1 @@
-[
-  {
-    "title": "title1",
-    "description": "description1",
-    "amount": 12.2,
-    "category": "FOOD",
-    "createdAt": {
-      "seconds": 1782156954,
-      "nanos": 978129000
-    }
-  }
-]
+[]

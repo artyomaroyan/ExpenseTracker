@@ -78,30 +78,3 @@ public class ApplicationConfiguration {
         }
     }
 }
-
-//    public static ApplicationConfiguration load() {
-//        Properties prop = new Properties();
-//
-//        try (InputStream input = ApplicationConfiguration.class
-//                .getClassLoader()
-//                .getResourceAsStream("application.properties")) {
-//
-//            if (input != null) {
-//                prop.load(input);
-//            }
-//        } catch (IOException ex) {
-//            throw new RuntimeException("Failed to load configuration", ex);
-//        }
-//
-//        String envPath = System.getenv("EXPENSE_FILE_PATH");
-//        if (envPath != null && !envPath.isEmpty()) {
-//            prop.setProperty("expense.file.path", envPath);
-//
-//        }
-//        return new ApplicationConfiguration(prop);
-//    }
-//
-//    public String getExpenseFilePath() {
-//        return properties.getProperty("expense.file.path",
-//                System.getProperty("user.dir") + "/resources/Expense.json");
-//    }

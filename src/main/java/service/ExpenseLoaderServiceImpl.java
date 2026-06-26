@@ -53,21 +53,3 @@ public class ExpenseLoaderServiceImpl implements ExpenseLoaderService {
         return Optional.empty();
     }
 }
-
-
-//    @Override
-//    public List<Expense> loadAll() {
-//        if (!file.exists() || file.length() == 0) {
-//            log.error("Failed to read file: File does not exist or is empty: {}", file.getAbsolutePath());
-//            throw new IllegalStateException("Can not read file: " + file.getAbsolutePath());
-//        }
-//
-//        try (Reader reader = Files.newBufferedReader(file.toPath(), StandardCharsets.UTF_8)) {
-//            List<Expense> expenses = gson.fromJson(reader, type);
-//            return expenses != null ? expenses : new ArrayList<>();
-//
-//        } catch (IOException | JsonSyntaxException ex) {
-//            log.error("Failed to load JSON file: {}", file.getAbsolutePath(), ex);
-//            throw new RuntimeException("Reading process failed: " + file.getAbsolutePath(), ex);
-//        }
-//    }
