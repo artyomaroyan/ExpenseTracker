@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Instant;
-import java.util.List;
 
 import static java.lang.IO.println;
 
@@ -77,8 +76,8 @@ public class ConsoleUI {
         }
     }
 
-    private List<Expense> fetchAll() {
-        return loaderService.loadAll();
+    private void fetchAll() {
+        loaderService.loadAll();
     }
 
     private void fetchByAmountAndCategory() {
@@ -134,7 +133,6 @@ public class ConsoleUI {
     private void updateTitle() {
         println("please enter new title");
         var title = inputHandler.readTitle();
-
     }
 
     private void addNewExpense() {
