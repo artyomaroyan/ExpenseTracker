@@ -51,6 +51,7 @@ public class ExpenseRepositoryAdapter implements ExpenseRepository<Expense, Long
     @Override
     public Optional<Expense> findById(Long id) {
         Objects.requireNonNull(id, "id must not be null");
+
         return modelOperations.findById(id);
     }
 

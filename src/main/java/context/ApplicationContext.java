@@ -12,6 +12,7 @@ import main.java.ui.UserInputHandler;
 import main.java.validation.InputValidator;
 import main.java.validation.InputValidatorImpl;
 
+import java.nio.file.Path;
 import java.util.Objects;
 
 /**
@@ -76,7 +77,7 @@ public record ApplicationContext(
         ExpenseRepository<Expense, Long> repository = new ExpenseRepositoryAdapter(modelInfo, operations);
         ExpenseService service = new ExpenseServiceImpl(repository);
         ExpenseLoaderService loader = new ExpenseLoaderServiceImpl(repository);
-        InputValidator validator = new InputValidatorImpl(loader);
+        InputValidator validator = new InputValidatorImpl();
         ConsoleUI console = new ConsoleUI(new UserInputHandler(validator), service, loader);
         return new ApplicationContext(console, validator, service, loader, repository);
     }

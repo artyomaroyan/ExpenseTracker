@@ -27,13 +27,13 @@ public class UserInputHandler implements AutoCloseable {
         return scanner.nextLine();
     }
 
-    public Long readLong() {
-        chackedClosed();
-        println("Please enter expense ID:");
-        var input = scanner.nextLong();
-        inputValidator.validateId(input);
-        return input;
-    }
+//    public Long readLong() {
+//        chackedClosed();
+//        println("Please enter expense ID:");
+//        var input = scanner.nextLong();
+//        inputValidator.validateId(input);
+//        return input;
+//    }
 
     public String readTitle() {
         chackedClosed();
