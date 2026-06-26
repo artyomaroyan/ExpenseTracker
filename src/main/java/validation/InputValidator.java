@@ -6,7 +6,7 @@ package main.java.validation;
  * Time: 00:16:44
  */
 public interface InputValidator {
-    void validateId(Long id);
+//    void validateId(Long id);
     void validateTitle(String title);
     void validateDescription(String description);
     void validateAmount(double amount);

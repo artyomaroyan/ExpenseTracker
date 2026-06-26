@@ -2,12 +2,13 @@ package main.java.ui;
 
 import main.java.model.Category;
 import main.java.model.Expense;
-import main.java.service.ExpenseService;
 import main.java.service.ExpenseLoaderService;
+import main.java.service.ExpenseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Instant;
+import java.util.List;
 
 import static java.lang.IO.println;
 
@@ -44,7 +45,7 @@ public class ConsoleUI {
                 // 4. perform input action
                 handleMainChoice(choice);
             } catch (Exception ex) {
-                log.error("Unexpected error {}", ex.getMessage());
+                log.error("Unexpected error: {}", ex.getMessage());
                 throw new IllegalStateException("Application Failed: ", ex.getCause());
             }
         }
@@ -76,8 +77,8 @@ public class ConsoleUI {
         }
     }
 
-    private void fetchAll() {
-        loaderService.loadAll();
+    private List<Expense> fetchAll() {
+        return loaderService.loadAll();
     }
 
     private void fetchByAmountAndCategory() {
@@ -138,13 +139,9 @@ public class ConsoleUI {
 
     private void addNewExpense() {
         println("Please follow commands...");
-        println("Please enter expense title");
         var title = inputHandler.readTitle();
-        println("Please enter expense description");
         var description = inputHandler.readDescription();
-        println("Please enter expense amount");
         var amount = inputHandler.readAmount();
-        println("Please enter expense category");
         var category = inputHandler.readCategory();
         expenseService.create(new Expense(
                 null,

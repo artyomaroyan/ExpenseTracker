@@ -1,12 +1,10 @@
 package main.java.validation;
 
 import main.java.model.Category;
-import main.java.service.ExpenseLoaderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
  * Author: Artyom Aroyan
@@ -23,18 +21,12 @@ public class InputValidatorImpl implements InputValidator {
     private static final int DESCRIPTION_MIN_LENGTH = 5;
     private static final int DESCRIPTION_MAX_LENGTH = 50;
 
-    private final ExpenseLoaderService expenseLoaderService;
-
-    public InputValidatorImpl(ExpenseLoaderService expenseLoaderService) {
-        this.expenseLoaderService = expenseLoaderService;
-    }
-
-    @Override
-    public void validateId(Long id) {
-        boolean exists = expenseLoaderService.loadAll().stream()
-                .anyMatch(e -> Objects.equals(e.id(), id));
-        if (exists) throw new IllegalArgumentException("Duplicate ID value: " + id);
-    }
+//    @Override
+//    public void validateId(Long id) {
+//        boolean exists = expenseLoaderService.loadAll().stream()
+//                .anyMatch(e -> Objects.equals(e.id(), id));
+//        if (exists) throw new IllegalArgumentException("Duplicate ID value: " + id);
+//    }
 
     @Override
     public void validateTitle(String title) {

@@ -20,8 +20,8 @@ public class Application {
             ConsoleUI consoleUI = context.consoleUI();
             consoleUI.start();
         } catch (Exception ex) {
-            log.error("Failed to start application", ex);
-            throw new RuntimeException("Application failed to start: " + ex.getMessage());
+            log.error("Failed to produce request: {}", ex.getMessage(), ex);
+            throw new RuntimeException("Application failed: " + ex.getMessage());
         }
     }
 }
