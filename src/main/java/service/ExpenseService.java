@@ -12,4 +12,5 @@ import main.java.model.ExpenseResponse;
 public interface ExpenseService {
     Expense create(Expense expense);
     ExpenseResponse update(ExpenseRequest request);
+    void delete(Long id);
 }

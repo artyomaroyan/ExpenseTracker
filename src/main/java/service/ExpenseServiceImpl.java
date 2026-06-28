@@ -32,6 +32,11 @@ public class ExpenseServiceImpl implements ExpenseService {
         return mapModelToResponse(saved);
     }
 
+    @Override
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
     private Expense mapRequestToModel(ExpenseRequest request) {
         return new Expense(
                 null,

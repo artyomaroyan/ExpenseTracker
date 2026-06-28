@@ -1,10 +1,8 @@
 package main.java.service;
 
+import main.java.model.Category;
 import main.java.model.Expense;
-import main.java.model.ExpenseResponse;
 import main.java.persistence.ExpenseRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +13,6 @@ import java.util.Optional;
  * Time: 23:51:51
  */
 public class ExpenseLoaderServiceImpl implements ExpenseLoaderService {
-    private static final Logger log = LoggerFactory.getLogger(ExpenseLoaderServiceImpl.class);
-
     private final ExpenseRepository<Expense, Long> expenseRepository;
 
     public ExpenseLoaderServiceImpl(ExpenseRepository<Expense, Long> expenseRepository) {
@@ -29,27 +25,27 @@ public class ExpenseLoaderServiceImpl implements ExpenseLoaderService {
     }
 
     @Override
-    public Optional<ExpenseResponse> loadById(Long id) {
-        return Optional.empty();
+    public Optional<Expense> loadById(Long id) {
+        return expenseRepository.findById(id);
     }
 
     @Override
-    public Optional<ExpenseResponse> loadByTitle(String title) {
-        return Optional.empty();
+    public Optional<Expense> loadByTitle(String title) {
+        return expenseRepository.findByTitle(title);
     }
 
     @Override
-    public Optional<ExpenseResponse> loadByAmount(double amount) {
-        return Optional.empty();
+    public Optional<Expense> loadByAmount(double amount) {
+        return expenseRepository.findByAmount(amount);
     }
 
     @Override
-    public Optional<ExpenseResponse> loadByCategory(String category) {
-        return Optional.empty();
+    public Optional<Expense> loadByCategory(String category) {
+        return expenseRepository.findByCategory(Category.valueOf(category));
     }
 
     @Override
-    public Optional<ExpenseResponse> loadByAmountAndCategory(double amount, String category) {
-        return Optional.empty();
+    public Optional<Expense> loadByAmountAndCategory(double amount, String category) {
+        return expenseRepository.findByAmountAndCategory(amount, Category.valueOf(category));
     }
 }

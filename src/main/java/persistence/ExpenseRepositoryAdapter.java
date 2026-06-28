@@ -79,4 +79,9 @@ public class ExpenseRepositoryAdapter implements ExpenseRepository<Expense, Long
     public List<Expense> findAll() {
         return modelOperations.findAll();
     }
+
+    @Override
+    public void deleteById(Long id) {
+        modelOperations.deleteById(id);
+    }
 }

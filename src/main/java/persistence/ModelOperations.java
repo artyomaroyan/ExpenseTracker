@@ -56,4 +56,11 @@ public interface ModelOperations<T, ID> {
      * @return an {@link Optional} wrapping the found model
      */
     Optional<T> findById(ID id);
+
+    /**
+     *
+     *
+     * @param id must not be {@code null}
+     */
+    void deleteById(ID id);
 }

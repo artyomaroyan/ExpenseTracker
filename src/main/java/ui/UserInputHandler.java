@@ -15,56 +15,27 @@ public class UserInputHandler implements AutoCloseable {
     private final Scanner scanner;
     private boolean closed = false;
 
-    private final InputValidator inputValidator;
-
-    public UserInputHandler(InputValidator inputValidator) {
-        this.inputValidator = inputValidator;
+    public UserInputHandler() {
         this.scanner = new Scanner(System.in);
     }
 
     public String readLine() {
-        chackedClosed();
+        chackClosed();
         return scanner.nextLine();
     }
 
-//    public Long readLong() {
-//        chackedClosed();
-//        println("Please enter expense ID:");
-//        var input = scanner.nextLong();
-//        inputValidator.validateId(input);
-//        return input;
-//    }
-
-    public String readTitle() {
-        chackedClosed();
-        println("Please enter expense title:");
-        var input =  scanner.nextLine();
-        inputValidator.validateTitle(input);
-        return input;
+    public String readLine(String prompt) {
+        println(prompt + " ");
+        return this.readLine();
     }
 
-    public String readDescription() {
-        chackedClosed();
-        println("Please enter expense description:");
-        var input = scanner.nextLine();
-        inputValidator.validateDescription(input);
-        return input;
-    }
-
-    public double readAmount() {
-        chackedClosed();
-        println("Please enter your expense amount:");
-        var input = scanner.nextDouble();
-        inputValidator.validateAmount(input);
-        return input;
-    }
-
-    public String readCategory() {
-        chackedClosed();
-        println("Please choose category: 'SHOPPING', 'FOOD', 'HOUSE_RENT', 'CAR', 'OTHER'");
-        var input = scanner.nextLine();
-        inputValidator.validateCategory(input);
-        return input.toUpperCase();
+    public Number readDigit(String prompt) {
+            try {
+                var input = this.readLine(prompt);
+                return Long.parseLong(input);
+            } catch (NumberFormatException e) {
+                throw new IllegalStateException("Invalid number.");
+            }
     }
 
     @Override
@@ -75,7 +46,45 @@ public class UserInputHandler implements AutoCloseable {
         }
     }
 
-    private void chackedClosed() {
+    private void chackClosed() {
         if (closed) throw new UnsupportedOperationException("Input handler is closed!");
     }
 }
+
+//    public Long readLong() {
+//        chackClosed();
+//        println("Please enter expense ID:");
+//        return scanner.nextLong();
+//    }
+//
+//    public String readTitle() {
+//        chackClosed();
+//        println("Please enter expense title:");
+//        var input =  scanner.nextLine();
+//        inputValidator.validateTitle(input);
+//        return input;
+//    }
+//
+//    public String readDescription() {
+//        chackClosed();
+//        println("Please enter expense description:");
+//        var input = scanner.nextLine();
+//        inputValidator.validateDescription(input);
+//        return input;
+//    }
+//
+//    public double readAmount() {
+//        chackClosed();
+//        println("Please enter your expense amount:");
+//        var input = scanner.nextDouble();
+//        inputValidator.validateAmount(input);
+//        return input;
+//    }
+//
+//    public String readCategory() {
+//        chackClosed();
+//        println("Please choose category: 'SHOPPING', 'FOOD', 'HOUSE_RENT', 'CAR', 'OTHER'");
+//        var input = scanner.nextLine();
+//        inputValidator.validateCategory(input);
+//        return input.toUpperCase();
+//    }
