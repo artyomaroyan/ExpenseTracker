@@ -1,7 +1,6 @@
 package main.java.service;
 
 import main.java.model.Expense;
-import main.java.model.ExpenseResponse;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,9 +12,9 @@ import java.util.Optional;
  */
 public interface ExpenseLoaderService {
     List<Expense> loadAll();
-    Optional<ExpenseResponse> loadById(Long id);
-    Optional<ExpenseResponse> loadByTitle(String title);
-    Optional<ExpenseResponse> loadByAmount(double amount);
-    Optional<ExpenseResponse> loadByCategory(String category);
-    Optional<ExpenseResponse> loadByAmountAndCategory(double amount, String category);
+    Optional<Expense> loadById(Long id);
+    Optional<Expense> loadByTitle(String title);
+    Optional<Expense> loadByAmount(double amount);
+    Optional<Expense> loadByCategory(String category);
+    Optional<Expense> loadByAmountAndCategory(double amount, String category);
 }

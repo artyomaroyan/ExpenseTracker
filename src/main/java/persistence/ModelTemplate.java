@@ -91,6 +91,13 @@ public class ModelTemplate<T, ID> implements ModelOperations<T, ID> {
                 .findFirst();
     }
 
+    @Override
+    public void deleteById(ID id) {
+        Objects.requireNonNull(id, "id must not be null");
+        var value = this.findById(id);
+        readAll().stream().toList().remove(value);
+    }
+
     // ------------------------------------------------------------------
     // Internal helpers
     // ------------------------------------------------------------------
@@ -156,97 +163,3 @@ public class ModelTemplate<T, ID> implements ModelOperations<T, ID> {
                 .create();
     }
 }
-
-//    private static final Logger log = LoggerFactory.getLogger(ModelTemplate.class);
-//    private static final File FILE = new File(ApplicationConfiguration.load().getExpenseFilePath());
-//    //    private final File file = new File("Expense.json");
-//    private final Gson gson;
-//
-//    public ModelTemplate() {
-//        this.gson = new GsonBuilder()
-//                .setPrettyPrinting()
-//                .registerTypeAdapter(Instant.class, (JsonSerializer<Instant>) (src, _, _) ->
-//                        new JsonPrimitive(src.toString()))
-//                .registerTypeAdapter(Instant.class, (JsonDeserializer<Instant>) (json, _, _) ->
-//                        Instant.parse(json.getAsString()))
-//                .create();
-//    }
-//
-//    @Override
-//    public <T> T insert(T model) {
-//        Objects.requireNonNull(model, "Model must not be null");
-//        Type listType = TypeToken.getParameterized(List.class, model.getClass()).getType();
-//        List<T> values;
-//
-//        if (!FILE.exists() || FILE.length() == 0) {
-//            log.error("Failed to read file: File does not exists or is empty: {}", FILE.getAbsolutePath());
-//            throw new IllegalStateException("Can not read file: " + FILE.getAbsolutePath());
-//        }
-//
-//        // 1. read JSON file before saving any new data, otherwise all data will be removed from file.
-//        try (Reader reader = Files.newBufferedReader(FILE.toPath(), StandardCharsets.UTF_8)) {
-//            values = gson.fromJson(reader, listType);
-//
-//            if (values == null) {
-//                values = new ArrayList<>();
-//            }
-//
-//            // 2. after reading file you can add new data without losing old data.
-//            values.add(model);
-//            try (Writer writer = Files.newBufferedWriter(FILE.toPath(), StandardCharsets.UTF_8)) {
-//                gson.toJson(values, writer);
-//            }
-//        } catch (IOException | JsonSyntaxException ex) {
-//            log.error("Failed to load JSON file: {}", FILE.getAbsolutePath(), ex);
-//            throw new RuntimeException("Reading process failed: " + FILE.getAbsolutePath(), ex);
-//        }
-//        return model;
-//    }
-//
-//    @Override
-//    public <T> T update(T model) {
-//        return null;
-//    }
-//
-//    @Override
-//    public <T> Iterable<T> findAll() {
-//        return null;
-//    }
-//
-//    @Override
-//    public <T, ID> T findOne(ID id, Class<T> classType) {
-//        Objects.requireNonNull(id, "ID must not be null");
-//        Objects.requireNonNull(classType, "Class type must not be null");
-//
-//        if (!FILE.exists() || FILE.length() == 0) {
-//            System.err.println("File does not exists");
-//        }
-//        Type type = TypeToken.getParameterized(List.class, classType).getType();
-//
-//        try (Reader reader = Files.newBufferedReader(FILE.toPath(), StandardCharsets.UTF_8)) {
-//            List<T> values = gson.fromJson(reader, type);
-//            if (values == null) {
-//                log.error("There is no data in file:");
-//            }
-//
-//            assert values != null;
-//            return values.stream()
-//                    .filter(item -> {
-//                        try {
-//                            Field idField = item.getClass().getField("id");
-//                            idField.setAccessible(true);
-//                            Object valueOfId = idField.get(item);
-//
-//                            return id.equals(valueOfId);
-//                        } catch (NoSuchFieldException | IllegalAccessException ex) {
-//                            log.error("Field 'id' not found or inaccessible in class {}", item.getClass().getName());
-//                            return false;
-//                        }
-//                    }).findFirst()
-//                    .orElse(null);
-//
-//        } catch (IOException | JsonSyntaxException ex) {
-//            log.error("Failed to load JSON file during findOne: {}", FILE.getAbsolutePath(), ex);
-//            throw new RuntimeException("Reading process failed: " + FILE.getAbsolutePath(), ex);
-//        }
-//    }

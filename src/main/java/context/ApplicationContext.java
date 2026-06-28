@@ -78,7 +78,7 @@ public record ApplicationContext(
         ExpenseService service = new ExpenseServiceImpl(repository);
         ExpenseLoaderService loader = new ExpenseLoaderServiceImpl(repository);
         InputValidator validator = new InputValidatorImpl();
-        ConsoleUI console = new ConsoleUI(new UserInputHandler(validator), service, loader);
+        ConsoleUI console = new ConsoleUI(new UserInputHandler(), service, loader);
         return new ApplicationContext(console, validator, service, loader, repository);
     }
 }

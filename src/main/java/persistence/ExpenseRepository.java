@@ -83,4 +83,11 @@ public interface ExpenseRepository<T, ID> {
      * @return a non-null, possibly empty {@link List}
      */
     List<T> findAll();
+
+    /**
+     * Delete a model with specified id
+     *
+     * @param id must not be {@code null}
+     */
+    void deleteById(ID id);
 }

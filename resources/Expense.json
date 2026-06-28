@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "title": "hjjsah",
+    "description": "asdadsasd",
+    "amount": 32.1,
+    "category": "FOOD",
+    "createdAt": "2026-06-26T21:00:38.452200Z"
+  },
+  {
+    "title": "asdad",
+    "description": "asdasdasd",
+    "amount": 32.0,
+    "category": "CAR",
+    "createdAt": "2026-06-26T21:02:46.732748Z"
+  }
+]

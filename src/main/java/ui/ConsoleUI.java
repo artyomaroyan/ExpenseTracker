@@ -77,31 +77,39 @@ public class ConsoleUI {
     }
 
     private void fetchAll() {
-        loaderService.loadAll();
+        println(loaderService.loadAll());
+        // todo: implement expense printing style.
     }
 
     private void fetchByAmountAndCategory() {
-
+        var amount = inputHandler.readDigit("Please enter expense amount to fetch");
+        var category = inputHandler.readLine("Please enter expense category to fetch");
+        println(loaderService.loadByAmountAndCategory((double) amount, category));
     }
 
     private void fetchByCategory() {
-
+        var category = inputHandler.readLine("Please enter expense category to fetch");
+        println(loaderService.loadByCategory(category));
     }
 
     private void fetchByAmount() {
-
+        var amount = inputHandler.readDigit("Please enter expense amount to fetch");
+        println(loaderService.loadByAmount((double) amount));
     }
 
     private void fetchByTitle() {
-
+        var title = inputHandler.readLine("Please enter expense title to fetch");
+        println(loaderService.loadByTitle(title));
     }
 
     private void fetchById() {
-
+        var id = inputHandler.readDigit("Please enter expense ID to fetch");
+        println(loaderService.loadById((Long) id));
     }
 
     private void deleteExpense() {
-
+        var id = inputHandler.readDigit("Please enter expense id to delete.");
+        expenseService.delete((Long) id);
     }
 
     private void updateExpense() {
@@ -132,20 +140,19 @@ public class ConsoleUI {
 
     private void updateTitle() {
         println("please enter new title");
-        var title = inputHandler.readTitle();
     }
 
     private void addNewExpense() {
         println("Please follow commands...");
-        var title = inputHandler.readTitle();
-        var description = inputHandler.readDescription();
-        var amount = inputHandler.readAmount();
-        var category = inputHandler.readCategory();
+        var title = inputHandler.readLine("Please enter expense title.");
+        var description = inputHandler.readLine("Please enter expense description");
+        var amount = inputHandler.readDigit("Please enter expense amount");
+        var category = inputHandler.readLine("Please enter expense category");
         expenseService.create(new Expense(
                 null,
                 title,
                 description,
-                amount,
+                (double) amount,
                 Category.valueOf(category),
                 Instant.now()
         ));
