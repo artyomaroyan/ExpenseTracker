@@ -1,7 +1,5 @@
 package main.java.ui;
 
-import main.java.validation.InputValidator;
-
 import java.util.Scanner;
 
 import static java.lang.IO.println;
@@ -20,7 +18,7 @@ public class UserInputHandler implements AutoCloseable {
     }
 
     public String readLine() {
-        chackClosed();
+        checkClosed();
         return scanner.nextLine();
     }
 
@@ -29,13 +27,22 @@ public class UserInputHandler implements AutoCloseable {
         return this.readLine();
     }
 
-    public Number readDigit(String prompt) {
-            try {
-                var input = this.readLine(prompt);
-                return Long.parseLong(input);
-            } catch (NumberFormatException e) {
-                throw new IllegalStateException("Invalid number.");
-            }
+    public Long readLong(String prompt) {
+        try {
+            var input = this.readLine(prompt);
+            return Long.parseLong(input);
+        } catch (NumberFormatException ex) {
+            throw new IllegalArgumentException("Invalid number format: ", ex);
+        }
+    }
+
+    public double readDouble(String prompt) {
+        try {
+            var input = this.readLine(prompt);
+            return Double.parseDouble(input);
+        } catch (NumberFormatException ex) {
+            throw new IllegalArgumentException("Invalid number: ", ex);
+        }
     }
 
     @Override
@@ -46,45 +53,7 @@ public class UserInputHandler implements AutoCloseable {
         }
     }
 
-    private void chackClosed() {
+    private void checkClosed() {
         if (closed) throw new UnsupportedOperationException("Input handler is closed!");
     }
 }
-
-//    public Long readLong() {
-//        chackClosed();
-//        println("Please enter expense ID:");
-//        return scanner.nextLong();
-//    }
-//
-//    public String readTitle() {
-//        chackClosed();
-//        println("Please enter expense title:");
-//        var input =  scanner.nextLine();
-//        inputValidator.validateTitle(input);
-//        return input;
-//    }
-//
-//    public String readDescription() {
-//        chackClosed();
-//        println("Please enter expense description:");
-//        var input = scanner.nextLine();
-//        inputValidator.validateDescription(input);
-//        return input;
-//    }
-//
-//    public double readAmount() {
-//        chackClosed();
-//        println("Please enter your expense amount:");
-//        var input = scanner.nextDouble();
-//        inputValidator.validateAmount(input);
-//        return input;
-//    }
-//
-//    public String readCategory() {
-//        chackClosed();
-//        println("Please choose category: 'SHOPPING', 'FOOD', 'HOUSE_RENT', 'CAR', 'OTHER'");
-//        var input = scanner.nextLine();
-//        inputValidator.validateCategory(input);
-//        return input.toUpperCase();
-//    }

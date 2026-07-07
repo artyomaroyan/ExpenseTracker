@@ -30,34 +30,34 @@ public class InputValidatorImpl implements InputValidator {
 
     @Override
     public void validateTitle(String title) {
-         if (title.length() <= TITLE_MIN_LENGTH) {
-             log.warn("Title can not be less then 3 characters.");
-             throw new IllegalStateException("Title length is less then allowed");
-         } else if (title.length() >= TITLE_MAX_LENGTH) {
+         if (title.length() < TITLE_MIN_LENGTH) {
+             log.warn("Title can not be less than 3 characters.");
+             throw new IllegalArgumentException("Title length is less than allowed");
+         } else if (title.length() > TITLE_MAX_LENGTH) {
              log.warn("Title length can not be greater then 20 characters.");
-             throw new IllegalStateException("Title length is greater than allowed");
+             throw new IllegalArgumentException("Title length is greater than allowed");
          }
     }
 
     @Override
     public void validateDescription(String description) {
-        if (description.length() <= DESCRIPTION_MIN_LENGTH) {
-            log.warn("Description length can not be less then 5 characters.");
-            throw new IllegalStateException("Description length is less then allowed");
-        } else if (description.length() >= DESCRIPTION_MAX_LENGTH) {
+        if (description.length() < DESCRIPTION_MIN_LENGTH) {
+            log.warn("Description length can not be less than 5 characters.");
+            throw new IllegalArgumentException("Description length is less than allowed");
+        } else if (description.length() > DESCRIPTION_MAX_LENGTH) {
             log.warn("Description length can not be greater then 50 characters.");
-            throw new IllegalStateException("Description length is greater then allowed");
+            throw new IllegalArgumentException("Description length is greater then allowed");
         }
     }
 
     @Override
     public void validateAmount(double amount) {
-        if (amount <= MIN_AMOUNT) {
-            log.warn("Amount can not be les or equal to {}", MIN_AMOUNT);
-            throw new IllegalStateException("Amount is less then allowed: Please enter valid amount.");
-        } else if (amount >= MAX_AMOUNT) {
+        if (amount < MIN_AMOUNT) {
+            log.warn("Amount can not be less than or equal to {}", MIN_AMOUNT);
+            throw new IllegalArgumentException("Amount is less than allowed: Please enter valid amount.");
+        } else if (amount > MAX_AMOUNT) {
             log.warn("Amount can not be greater or equal to {}", MAX_AMOUNT);
-            throw new IllegalStateException("Amount is greater then allowed: Please enter valid amount.");
+            throw new IllegalArgumentException("Amount is greater then allowed: Please enter valid amount.");
         }
     }
 
@@ -66,7 +66,7 @@ public class InputValidatorImpl implements InputValidator {
         if (Arrays.stream(Category.values())
                 .noneMatch(c -> c.name().equalsIgnoreCase(category))) {
             log.warn("Category mismatch: {}", category);
-            throw new IllegalStateException("Please select category from list.");
+            throw new IllegalArgumentException("Please select category from list.");
         }
     }
 }
