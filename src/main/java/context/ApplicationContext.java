@@ -75,9 +75,9 @@ public record ApplicationContext(
         ModelInformation<Expense, Long> modelInfo = new ReflectiveModelInformation<>(Expense.class, Long.class, Expense::id);
         ModelOperations<Expense, Long> operations = new ModelTemplate<>(configuration.getExpenseFilePath(), Expense.class, modelInfo);
         ExpenseRepository<Expense, Long> repository = new ExpenseRepositoryAdapter(modelInfo, operations);
-        ExpenseService service = new ExpenseServiceImpl(repository);
         ExpenseLoaderService loader = new ExpenseLoaderServiceImpl(repository);
         InputValidator validator = new InputValidatorImpl();
+        ExpenseService service = new ExpenseServiceImpl(validator, repository);
         ConsoleUI console = new ConsoleUI(new UserInputHandler(), service, loader);
         return new ApplicationContext(console, validator, service, loader, repository);
     }

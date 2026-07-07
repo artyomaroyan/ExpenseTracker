@@ -12,15 +12,15 @@ import static java.lang.IO.println;
  * Time: 14:00:07
  */
 private static final Scanner scanner = new Scanner(System.in);
+private static final Random random = new Random();
 void main() {
 //    gsonWriter();
     jacksonWriter();
-
 }
 
 private static void jacksonWriter() {
     ObjectMapper mapper = new ObjectMapper();
-    File file = new File("expense_json.json");
+    File file = new File("expense_json_1.json");
     List<Expense> expenses;
 
     if (file.exists() && file.length() > 0) {
@@ -35,7 +35,16 @@ private static void jacksonWriter() {
         expenses = new ArrayList<>();
     }
 
-    expenses.add(new Expense(inputId(), inputTitle(), inputAmount()));
+    int startIndex = expenses.size() + 1;
+    for (int i = 0; i <= 100; i++) {
+        expenses.add(new Expense(
+                (long) i,
+                "Title-" + (startIndex + i),
+                "description-" + (startIndex + i),
+                generateAmount(),
+                generateCategory(),
+                Instant.now()));
+    }
 
     try {
         mapper.writerWithDefaultPrettyPrinter().writeValue(file, expenses);
@@ -47,10 +56,10 @@ private static void jacksonWriter() {
 
 private static void gsonWriter() {
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    Type listType = new TypeToken<List<Expense>>(){}.getType();
+    Type listType = new TypeToken<List<Expense>>() {}.getType();
     List<Expense> expenses;
 
-    File file = new File("expense_gson.json");
+    File file = new File("expense_json_1.json");
     if (file.exists()) {
         try (FileReader reader = new FileReader(file)) {
             expenses = gson.fromJson(reader, listType);
@@ -67,7 +76,16 @@ private static void gsonWriter() {
         expenses = new ArrayList<>();
     }
 
-    expenses.add(new Expense(inputId(), inputTitle(), inputAmount()));
+    int startIndex = expenses.size() + 1;
+    for (int i = 0; i <= 100; i++) {
+        expenses.add(new Expense(
+                (long) i,
+                "Title-" + (startIndex + 1),
+                "description-" + (startIndex + 1),
+                generateAmount(),
+                generateCategory(),
+                Instant.now()));
+    }
 
     try (FileWriter writer = new FileWriter(file)) {
         gson.toJson(expenses, writer);
@@ -93,5 +111,33 @@ private static double inputAmount() {
     return scanner.nextDouble();
 }
 
-private record Expense(Long id, String title, double amount) {
+private static String generateTitle() {
+    StringBuilder title = new StringBuilder("Title-");
+    int version = 1;
+    //    for (int i = 1; i <= 100; i++) {
+//        title.append("title-").append(i);
+//    }
+//    return String.valueOf(title);
+    return String.valueOf(title.append(version++));
+}
+
+private static String generateDescription() {
+    StringBuilder description = new StringBuilder();
+    for (int i = 1; i <= 100; i++) {
+        description.append("description").append(i);
+    }
+    return String.valueOf(description);
+}
+
+private static double generateAmount() {
+    double amount = random.nextDouble(0.0, 1000.0);
+    return Math.round(amount * 100.0) / 100.0;
+}
+
+private static String generateCategory() {
+    String[] categories = {"SHOPPING", "FOOD", "HOUSE_RENT", "CAR", "OTHER"};
+    return categories[random.nextInt(categories.length)];
+}
+
+private record Expense(Long id, String title, String description, double amount, String category, Instant createdAt) {
 }
