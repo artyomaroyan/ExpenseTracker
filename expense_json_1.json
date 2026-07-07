@@ -1,0 +1,708 @@
+[ {
+  "id" : 0,
+  "title" : "Title-1",
+  "description" : "description-1",
+  "amount" : 287.04,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671236Z"
+}, {
+  "id" : 1,
+  "title" : "Title-2",
+  "description" : "description-2",
+  "amount" : 381.13,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671248Z"
+}, {
+  "id" : 2,
+  "title" : "Title-3",
+  "description" : "description-3",
+  "amount" : 895.3,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671251Z"
+}, {
+  "id" : 3,
+  "title" : "Title-4",
+  "description" : "description-4",
+  "amount" : 71.03,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671254Z"
+}, {
+  "id" : 4,
+  "title" : "Title-5",
+  "description" : "description-5",
+  "amount" : 400.08,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671256Z"
+}, {
+  "id" : 5,
+  "title" : "Title-6",
+  "description" : "description-6",
+  "amount" : 297.66,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671259Z"
+}, {
+  "id" : 6,
+  "title" : "Title-7",
+  "description" : "description-7",
+  "amount" : 190.16,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671261Z"
+}, {
+  "id" : 7,
+  "title" : "Title-8",
+  "description" : "description-8",
+  "amount" : 846.49,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671263Z"
+}, {
+  "id" : 8,
+  "title" : "Title-9",
+  "description" : "description-9",
+  "amount" : 386.17,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671266Z"
+}, {
+  "id" : 9,
+  "title" : "Title-10",
+  "description" : "description-10",
+  "amount" : 420.7,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671269Z"
+}, {
+  "id" : 10,
+  "title" : "Title-11",
+  "description" : "description-11",
+  "amount" : 517.46,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671272Z"
+}, {
+  "id" : 11,
+  "title" : "Title-12",
+  "description" : "description-12",
+  "amount" : 972.5,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671275Z"
+}, {
+  "id" : 12,
+  "title" : "Title-13",
+  "description" : "description-13",
+  "amount" : 116.33,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671277Z"
+}, {
+  "id" : 13,
+  "title" : "Title-14",
+  "description" : "description-14",
+  "amount" : 939.88,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671280Z"
+}, {
+  "id" : 14,
+  "title" : "Title-15",
+  "description" : "description-15",
+  "amount" : 704.8,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671283Z"
+}, {
+  "id" : 15,
+  "title" : "Title-16",
+  "description" : "description-16",
+  "amount" : 454.44,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671285Z"
+}, {
+  "id" : 16,
+  "title" : "Title-17",
+  "description" : "description-17",
+  "amount" : 293.33,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671288Z"
+}, {
+  "id" : 17,
+  "title" : "Title-18",
+  "description" : "description-18",
+  "amount" : 282.41,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671291Z"
+}, {
+  "id" : 18,
+  "title" : "Title-19",
+  "description" : "description-19",
+  "amount" : 796.62,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671293Z"
+}, {
+  "id" : 19,
+  "title" : "Title-20",
+  "description" : "description-20",
+  "amount" : 68.73,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671296Z"
+}, {
+  "id" : 20,
+  "title" : "Title-21",
+  "description" : "description-21",
+  "amount" : 274.43,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671299Z"
+}, {
+  "id" : 21,
+  "title" : "Title-22",
+  "description" : "description-22",
+  "amount" : 338.0,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671302Z"
+}, {
+  "id" : 22,
+  "title" : "Title-23",
+  "description" : "description-23",
+  "amount" : 431.66,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671311Z"
+}, {
+  "id" : 23,
+  "title" : "Title-24",
+  "description" : "description-24",
+  "amount" : 566.65,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671314Z"
+}, {
+  "id" : 24,
+  "title" : "Title-25",
+  "description" : "description-25",
+  "amount" : 857.78,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671317Z"
+}, {
+  "id" : 25,
+  "title" : "Title-26",
+  "description" : "description-26",
+  "amount" : 576.75,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671320Z"
+}, {
+  "id" : 26,
+  "title" : "Title-27",
+  "description" : "description-27",
+  "amount" : 628.64,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671323Z"
+}, {
+  "id" : 27,
+  "title" : "Title-28",
+  "description" : "description-28",
+  "amount" : 62.65,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671325Z"
+}, {
+  "id" : 28,
+  "title" : "Title-29",
+  "description" : "description-29",
+  "amount" : 699.96,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671328Z"
+}, {
+  "id" : 29,
+  "title" : "Title-30",
+  "description" : "description-30",
+  "amount" : 644.41,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671330Z"
+}, {
+  "id" : 30,
+  "title" : "Title-31",
+  "description" : "description-31",
+  "amount" : 798.96,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671333Z"
+}, {
+  "id" : 31,
+  "title" : "Title-32",
+  "description" : "description-32",
+  "amount" : 14.05,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671335Z"
+}, {
+  "id" : 32,
+  "title" : "Title-33",
+  "description" : "description-33",
+  "amount" : 190.66,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671338Z"
+}, {
+  "id" : 33,
+  "title" : "Title-34",
+  "description" : "description-34",
+  "amount" : 103.41,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671341Z"
+}, {
+  "id" : 34,
+  "title" : "Title-35",
+  "description" : "description-35",
+  "amount" : 297.85,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671343Z"
+}, {
+  "id" : 35,
+  "title" : "Title-36",
+  "description" : "description-36",
+  "amount" : 491.96,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671346Z"
+}, {
+  "id" : 36,
+  "title" : "Title-37",
+  "description" : "description-37",
+  "amount" : 951.14,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671349Z"
+}, {
+  "id" : 37,
+  "title" : "Title-38",
+  "description" : "description-38",
+  "amount" : 758.93,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671351Z"
+}, {
+  "id" : 38,
+  "title" : "Title-39",
+  "description" : "description-39",
+  "amount" : 917.07,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671354Z"
+}, {
+  "id" : 39,
+  "title" : "Title-40",
+  "description" : "description-40",
+  "amount" : 309.13,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671357Z"
+}, {
+  "id" : 40,
+  "title" : "Title-41",
+  "description" : "description-41",
+  "amount" : 147.34,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671359Z"
+}, {
+  "id" : 41,
+  "title" : "Title-42",
+  "description" : "description-42",
+  "amount" : 141.54,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671362Z"
+}, {
+  "id" : 42,
+  "title" : "Title-43",
+  "description" : "description-43",
+  "amount" : 905.31,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671368Z"
+}, {
+  "id" : 43,
+  "title" : "Title-44",
+  "description" : "description-44",
+  "amount" : 272.63,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671371Z"
+}, {
+  "id" : 44,
+  "title" : "Title-45",
+  "description" : "description-45",
+  "amount" : 63.32,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671374Z"
+}, {
+  "id" : 45,
+  "title" : "Title-46",
+  "description" : "description-46",
+  "amount" : 375.45,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671377Z"
+}, {
+  "id" : 46,
+  "title" : "Title-47",
+  "description" : "description-47",
+  "amount" : 543.24,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671379Z"
+}, {
+  "id" : 47,
+  "title" : "Title-48",
+  "description" : "description-48",
+  "amount" : 238.87,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671382Z"
+}, {
+  "id" : 48,
+  "title" : "Title-49",
+  "description" : "description-49",
+  "amount" : 712.11,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671385Z"
+}, {
+  "id" : 49,
+  "title" : "Title-50",
+  "description" : "description-50",
+  "amount" : 737.15,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671387Z"
+}, {
+  "id" : 50,
+  "title" : "Title-51",
+  "description" : "description-51",
+  "amount" : 84.22,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671390Z"
+}, {
+  "id" : 51,
+  "title" : "Title-52",
+  "description" : "description-52",
+  "amount" : 497.94,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671393Z"
+}, {
+  "id" : 52,
+  "title" : "Title-53",
+  "description" : "description-53",
+  "amount" : 59.26,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671395Z"
+}, {
+  "id" : 53,
+  "title" : "Title-54",
+  "description" : "description-54",
+  "amount" : 584.93,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671398Z"
+}, {
+  "id" : 54,
+  "title" : "Title-55",
+  "description" : "description-55",
+  "amount" : 258.98,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671401Z"
+}, {
+  "id" : 55,
+  "title" : "Title-56",
+  "description" : "description-56",
+  "amount" : 143.53,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671403Z"
+}, {
+  "id" : 56,
+  "title" : "Title-57",
+  "description" : "description-57",
+  "amount" : 889.03,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671413Z"
+}, {
+  "id" : 57,
+  "title" : "Title-58",
+  "description" : "description-58",
+  "amount" : 128.7,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671416Z"
+}, {
+  "id" : 58,
+  "title" : "Title-59",
+  "description" : "description-59",
+  "amount" : 212.96,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671418Z"
+}, {
+  "id" : 59,
+  "title" : "Title-60",
+  "description" : "description-60",
+  "amount" : 694.82,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671421Z"
+}, {
+  "id" : 60,
+  "title" : "Title-61",
+  "description" : "description-61",
+  "amount" : 688.73,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671424Z"
+}, {
+  "id" : 61,
+  "title" : "Title-62",
+  "description" : "description-62",
+  "amount" : 310.76,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671426Z"
+}, {
+  "id" : 62,
+  "title" : "Title-63",
+  "description" : "description-63",
+  "amount" : 51.44,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671429Z"
+}, {
+  "id" : 63,
+  "title" : "Title-64",
+  "description" : "description-64",
+  "amount" : 136.23,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671433Z"
+}, {
+  "id" : 64,
+  "title" : "Title-65",
+  "description" : "description-65",
+  "amount" : 696.05,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671435Z"
+}, {
+  "id" : 65,
+  "title" : "Title-66",
+  "description" : "description-66",
+  "amount" : 214.2,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671438Z"
+}, {
+  "id" : 66,
+  "title" : "Title-67",
+  "description" : "description-67",
+  "amount" : 384.19,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671442Z"
+}, {
+  "id" : 67,
+  "title" : "Title-68",
+  "description" : "description-68",
+  "amount" : 400.18,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671445Z"
+}, {
+  "id" : 68,
+  "title" : "Title-69",
+  "description" : "description-69",
+  "amount" : 526.25,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671447Z"
+}, {
+  "id" : 69,
+  "title" : "Title-70",
+  "description" : "description-70",
+  "amount" : 224.76,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671450Z"
+}, {
+  "id" : 70,
+  "title" : "Title-71",
+  "description" : "description-71",
+  "amount" : 835.11,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671453Z"
+}, {
+  "id" : 71,
+  "title" : "Title-72",
+  "description" : "description-72",
+  "amount" : 913.58,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671455Z"
+}, {
+  "id" : 72,
+  "title" : "Title-73",
+  "description" : "description-73",
+  "amount" : 446.19,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671458Z"
+}, {
+  "id" : 73,
+  "title" : "Title-74",
+  "description" : "description-74",
+  "amount" : 194.96,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671460Z"
+}, {
+  "id" : 74,
+  "title" : "Title-75",
+  "description" : "description-75",
+  "amount" : 279.9,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671483Z"
+}, {
+  "id" : 75,
+  "title" : "Title-76",
+  "description" : "description-76",
+  "amount" : 299.96,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671506Z"
+}, {
+  "id" : 76,
+  "title" : "Title-77",
+  "description" : "description-77",
+  "amount" : 314.57,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671510Z"
+}, {
+  "id" : 77,
+  "title" : "Title-78",
+  "description" : "description-78",
+  "amount" : 132.65,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671513Z"
+}, {
+  "id" : 78,
+  "title" : "Title-79",
+  "description" : "description-79",
+  "amount" : 138.49,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671515Z"
+}, {
+  "id" : 79,
+  "title" : "Title-80",
+  "description" : "description-80",
+  "amount" : 422.19,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671518Z"
+}, {
+  "id" : 80,
+  "title" : "Title-81",
+  "description" : "description-81",
+  "amount" : 680.54,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671521Z"
+}, {
+  "id" : 81,
+  "title" : "Title-82",
+  "description" : "description-82",
+  "amount" : 231.13,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671523Z"
+}, {
+  "id" : 82,
+  "title" : "Title-83",
+  "description" : "description-83",
+  "amount" : 837.95,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671526Z"
+}, {
+  "id" : 83,
+  "title" : "Title-84",
+  "description" : "description-84",
+  "amount" : 272.02,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671529Z"
+}, {
+  "id" : 84,
+  "title" : "Title-85",
+  "description" : "description-85",
+  "amount" : 293.84,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671539Z"
+}, {
+  "id" : 85,
+  "title" : "Title-86",
+  "description" : "description-86",
+  "amount" : 127.65,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671551Z"
+}, {
+  "id" : 86,
+  "title" : "Title-87",
+  "description" : "description-87",
+  "amount" : 212.68,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671554Z"
+}, {
+  "id" : 87,
+  "title" : "Title-88",
+  "description" : "description-88",
+  "amount" : 478.4,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671556Z"
+}, {
+  "id" : 88,
+  "title" : "Title-89",
+  "description" : "description-89",
+  "amount" : 891.93,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671559Z"
+}, {
+  "id" : 89,
+  "title" : "Title-90",
+  "description" : "description-90",
+  "amount" : 113.06,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671562Z"
+}, {
+  "id" : 90,
+  "title" : "Title-91",
+  "description" : "description-91",
+  "amount" : 174.32,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671565Z"
+}, {
+  "id" : 91,
+  "title" : "Title-92",
+  "description" : "description-92",
+  "amount" : 491.77,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671567Z"
+}, {
+  "id" : 92,
+  "title" : "Title-93",
+  "description" : "description-93",
+  "amount" : 202.97,
+  "category" : "SHOPPING",
+  "createdAt" : "2026-07-07T21:54:37.671570Z"
+}, {
+  "id" : 93,
+  "title" : "Title-94",
+  "description" : "description-94",
+  "amount" : 89.05,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671573Z"
+}, {
+  "id" : 94,
+  "title" : "Title-95",
+  "description" : "description-95",
+  "amount" : 194.79,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671575Z"
+}, {
+  "id" : 95,
+  "title" : "Title-96",
+  "description" : "description-96",
+  "amount" : 490.83,
+  "category" : "CAR",
+  "createdAt" : "2026-07-07T21:54:37.671578Z"
+}, {
+  "id" : 96,
+  "title" : "Title-97",
+  "description" : "description-97",
+  "amount" : 546.59,
+  "category" : "HOUSE_RENT",
+  "createdAt" : "2026-07-07T21:54:37.671581Z"
+}, {
+  "id" : 97,
+  "title" : "Title-98",
+  "description" : "description-98",
+  "amount" : 590.44,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671583Z"
+}, {
+  "id" : 98,
+  "title" : "Title-99",
+  "description" : "description-99",
+  "amount" : 648.58,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671586Z"
+}, {
+  "id" : 99,
+  "title" : "Title-100",
+  "description" : "description-100",
+  "amount" : 295.08,
+  "category" : "FOOD",
+  "createdAt" : "2026-07-07T21:54:37.671589Z"
+}, {
+  "id" : 100,
+  "title" : "Title-101",
+  "description" : "description-101",
+  "amount" : 679.51,
+  "category" : "OTHER",
+  "createdAt" : "2026-07-07T21:54:37.671592Z"
+} ]
