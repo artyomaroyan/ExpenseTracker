@@ -278,3 +278,44 @@ public class ModelTemplate implements ModelOperation {
 //    }
 
 ########################################################################################################################
+
+
+//    public Long readLong() {
+//        chackClosed();
+//        println("Please enter expense ID:");
+//        return scanner.nextLong();
+//    }
+//
+//    public String readTitle() {
+//        chackClosed();
+//        println("Please enter expense title:");
+//        var input =  scanner.nextLine();
+//        inputValidator.validateTitle(input);
+//        return input;
+//    }
+//
+//    public String readDescription() {
+//        chackClosed();
+//        println("Please enter expense description:");
+//        var input = scanner.nextLine();
+//        inputValidator.validateDescription(input);
+//        return input;
+//    }
+//
+//    public double readAmount() {
+//        chackClosed();
+//        println("Please enter your expense amount:");
+//        var input = scanner.nextDouble();
+//        inputValidator.validateAmount(input);
+//        return input;
+//    }
+//
+//    public String readCategory() {
+//        chackClosed();
+//        println("Please choose category: 'SHOPPING', 'FOOD', 'HOUSE_RENT', 'CAR', 'OTHER'");
+//        var input = scanner.nextLine();
+//        inputValidator.validateCategory(input);
+//        return input.toUpperCase();
+//    }
+
+########################################################################################################################

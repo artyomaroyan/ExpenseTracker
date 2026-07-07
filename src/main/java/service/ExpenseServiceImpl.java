@@ -5,6 +5,7 @@ import main.java.model.Expense;
 import main.java.model.ExpenseRequest;
 import main.java.model.ExpenseResponse;
 import main.java.persistence.ExpenseRepository;
+import main.java.validation.InputValidator;
 
 import java.time.Instant;
 
@@ -14,9 +15,11 @@ import java.time.Instant;
  * Time: 21:48:51
  */
 public class ExpenseServiceImpl implements ExpenseService {
+    private final InputValidator inputValidator;
     private final ExpenseRepository<Expense, Long> repository;
 
-    public ExpenseServiceImpl(ExpenseRepository<Expense, Long> repository) {
+    public ExpenseServiceImpl(InputValidator inputValidator, ExpenseRepository<Expense, Long> repository) {
+        this.inputValidator = inputValidator;
         this.repository = repository;
     }
 
